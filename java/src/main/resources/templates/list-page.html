@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<body>
+	<p>Filmu saraksts</p>
+	<table>
+		<tr th:each="film: ${films}">
+			<td th:text="${film.getTitle()}"> </td>
+			<td th:text="${film.getLength()}"></td> 
+            <td th:text="${film.getFilmType()}"></td>
+    </table>
+	</tr>
+
+	</body>
+	
+</html>

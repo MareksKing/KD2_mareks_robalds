@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<body>
+	<p>Atjaunot filmas informāciju</p>
+    <form action = "#" th:action="@{/film/updateFilmById/__${id}__}" th:object="${packet}" method="post">
+		
+		
+		<table>
+			<tr>
+                <td> Nosaukums: </td>
+				<td th:text="${packet.getTitle()}"></td>
+				<td> <input type="text" th:field="*{Title}"> </td>
+				<td th:if="${#fields.hasErrors('Title')}" th:errors="*{Title}"> </td}>	
+			</tr>		
+				
+			<tr>
+                <td> Garums: </td>
+				<td th:text="${packet.getLength()}"></td>
+				<td> <input type="text" th:field="*{Length}"> </td>
+				<td th:if="${#fields.hasErrors('Length')}" th:errors="*{Length}"> </td}>	
+			</tr>
+
+            <tr>
+				<td> Kategorija: </td>
+				<td> <input type="text" th:field="*{FilmType}"> </td>
+				<td th:if="${#fields.hasErrors('FilmType')}" th:errors="*{FilmType}"> </td>	
+			</tr>
+				
+					
+		</table>
+		<button type="submit">Submit </button>
+	</form>
+
+</body>
+	
+</html>
